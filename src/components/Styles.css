@@ -1,0 +1,21 @@
+/* https://www.youtube.com/watch?v=j5P9FHiBVNo&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=20 */
+
+.primary {
+    font-family:'Courier New', Courier, monospace;
+    background-color: rgb(206, 170, 11);
+    color: rgb(10, 104, 10);
+  }
+  
+  .secondary {
+    font-family:'Courier New', Courier, monospace;
+    background-color: rgb(206, 170, 11);
+    color: rgb(10, 158, 10);
+  }
+  
+  .testColor {
+    color: orange;
+  }
+  
+  .font-bold {
+    font-weight: 800;
+  }

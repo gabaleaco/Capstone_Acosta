@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Alex Acosta
+# Capstone Project "The Encounterer - a TTRPG encounter tracker"
+# Walla Walla Community College, Computer Science
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The Encounterer
+I wanted to build this in response to the frustrations I have experienced as a Table Top Role-
+Playing Game (TTRPG) Dungeon/Game Master/Manager (DM/GM) when it comes to turn-based portions
+of gameplay, generally known as 'an encounter.' Countless pages and scraps of paper and precious
+minutes of gameplay have been wasted for the sake of hand-writing repetitive information down
+and hoping to keep track of it all accurately in the heat of battle. This is not to say there
+are not other websites and applications out there which serve the purpose of this dilemma, but
+in my experience with them, they all require too much information to create an on-the-fly
+encounter session. The point is to save time and when helpful, but unncessesary information is
+required to begin, the benefit of the tool seems to diminish, in my eyes. I am here to create
+an encounter tracking tool which has no required fields and can be edited on the fly, all while
+staying on the same screen.
 
-## Available Scripts
+## App.js notes
+re-save package.json if app doesn't load - trying to find permanent fix
+not sure what's happened, but it's working now? keeping this here just in case
+https://stackoverflow.com/questions/70377211/error-when-deploying-react-app-and-it-keeps-sayings-plugin-react-was-confli
 
-In the project directory, you can run:
+setting up React https://www.youtube.com/watch?v=QJZ-xgt4SJo&t=227s
 
-### `npm start`
+https://react-table.tanstack.com/docs/installation
+how-to https://www.youtube.com/watch?v=WRKEjPq75BY
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+updating gh pages https://www.c-sharpcorner.com/article/how-to-deploy-react-application-on-github-pages/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Sources:
+https://github.com/gitname/react-gh-pages
+https://www.pluralsight.com/guides/creating-dynamic-editable-tables-with-reactjs
+https://www.youtube.com/watch?v=j5P9FHiBVNo&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=20
+https://www.youtube.com/watch?v=4ORZ1GmjaMc&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=10
+https://www.c-sharpcorner.com/article/how-to-deploy-react-application-on-github-pages/
