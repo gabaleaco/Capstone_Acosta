@@ -1,6 +1,6 @@
-# Alex Acosta
-# Capstone Project "The Encounterer - a TTRPG encounter tracker"
-# Walla Walla Community College, Computer Science
+### Alex Acosta
+### Capstone Project "The Encounterer - a TTRPG encounter tracker"
+###S Walla Walla Community College, Computer Science
 
 ## The Encounterer
 I wanted to build this in response to the frustrations I have experienced as a Table Top Role-
