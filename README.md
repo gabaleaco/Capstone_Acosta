@@ -1,8 +1,8 @@
 ### Alex Acosta
 ### Capstone Project "The Encounterer - a TTRPG encounter tracker"
-###S Walla Walla Community College, Computer Science
+### Walla Walla Community College, Computer Science
 
-## The Encounterer
+# The Encounterer
 I wanted to build this in response to the frustrations I have experienced as a Table Top Role-
 Playing Game (TTRPG) Dungeon/Game Master/Manager (DM/GM) when it comes to turn-based portions
 of gameplay, generally known as 'an encounter.' Countless pages and scraps of paper and precious
@@ -30,7 +30,7 @@ updating gh pages https://www.c-sharpcorner.com/article/how-to-deploy-react-appl
 
 
 
-# Sources:
+### Sources:
 https://github.com/gitname/react-gh-pages
 https://www.pluralsight.com/guides/creating-dynamic-editable-tables-with-reactjs
 https://www.youtube.com/watch?v=j5P9FHiBVNo&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=20
