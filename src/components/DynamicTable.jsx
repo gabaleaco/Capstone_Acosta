@@ -76,8 +76,8 @@ export default class DynamicTable extends React.Component {
     renderRows() {
         var context = this;
 
-        // combatants is a dynamic array
-        return  this.state.combatants.map(function(o, i) {
+        // combatants is the dynamic array
+        return  this.state.combatants.map(function(o, i) { // o accesses the values of each combatant object
             return (
                 // i is index of element in array                
                 <tr key={"combatant-" + i}>
