@@ -1,21 +1,18 @@
 import React from 'react';
 
-// https://www.pluralsight.com/guides/creating-dynamic-editable-tables-with-reactjs
-
 export default class DynamicTable extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { // attributes to place in array
-            initiative: "", // "" form starts blank
+        this.state = {
+            initiative: "",
             name: "",
             armorClass: "",
             hitPoints: "",
-            combatants: [] // empty array
+            combatants: []
         }
     }
 
-    // event handlers to update displayed data from onChange when user changes cell data
     updateInitiative(event) {
         this.setState({initiative: event.target.value});
     }
@@ -29,13 +26,10 @@ export default class DynamicTable extends React.Component {
         this.setState({hitPoints: event.target.value});
     }
 
-    // event handler for button click - I think this might be my disconnect - need to understand setState better?
     handleClick() {
-        var combatants = this.state.combatants; // take current array of combatants and value of combatants
+        var combatants = this.state.combatants;
 
-        // https://stackoverflow.com/questions/71398371/reactjs-multi-input-form-to-dynamic-table/71399034#71399034
-        // this creates one row displaying '[object Object]'. When one is modified, all others duplicate input.
-        combatants.push({ //pushing each variable to array
+        combatants.push({
             initiative: this.state.initiative,
             name: this.state.name,
             armorClass: this.state.armorClass,
@@ -44,14 +38,13 @@ export default class DynamicTable extends React.Component {
 
         this.setState({
             combatants: combatants,
-            initiative: "", // clears form after adding combatant
+            initiative: "",
             name: "",
             armorClass: "",
             hitPoints: ""
         });
     }
 
-    // event handler to change combatant details on table
     handleCombatantChanged(i, event) {
         var combatants = this.state.combatants;
         combatants[i] = event.target.value;
@@ -60,7 +53,6 @@ export default class DynamicTable extends React.Component {
         });
     }
 
-    // event handler to delete combatant from table
     handleCombatantDeleted(i) {
         var combatants = this.state.combatants;
         combatants.splice(i, 1);
@@ -69,19 +61,17 @@ export default class DynamicTable extends React.Component {
         });
     }
 
-    // render form inputs and table headers
     render() {
         return (
             <div>New Combatant
                 <table>
-                    {/* inputs for each combatant category */}
                     <td>
                         <th>Initiative</th>
                         <input                    
                             id="initiative"
                             type="text"
                             value={this.state.initiative}
-                            onChange={this.updateInitiative.bind(this)} // onChange binds to event handler
+                            onChange={this.updateInitiative.bind(this)}
                         />
                     </td>
                     <td>
@@ -136,20 +126,19 @@ export default class DynamicTable extends React.Component {
         );
     }
 
-    // render combatant details on a table
     renderRows() {
         var context = this;
-        // combatants is the dynamic array
-        return  this.state.combatants.map(function(o, i) { // o accesses the values of each combatant object
+
+        return  this.state.combatants.map(function(o, i) {
             return (
-                // i is index of element in array                
+               
                 <tr key={"combatant-" + i}>
                     <td>
                         <input
                             id="initiative"
                             type="text"
                             value={o.initiative}
-                            onChange={context.handleCombatantChanged.bind(context, i)} // onChange binds to event handler
+                            onChange={context.handleCombatantChanged.bind(context, i)}
                         />
                     </td>
                     <td>
@@ -177,7 +166,6 @@ export default class DynamicTable extends React.Component {
                         />
                     </td>                    
                     <td> 
-                        {/* // onClick binds event handler */}
                         <button onClick={context.handleCombatantDeleted.bind(context, i)}> 
                             Finish him! 
                         </button>
