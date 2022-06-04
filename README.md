@@ -36,3 +36,5 @@ https://www.pluralsight.com/guides/creating-dynamic-editable-tables-with-reactjs
 https://www.youtube.com/watch?v=j5P9FHiBVNo&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=20
 https://www.youtube.com/watch?v=4ORZ1GmjaMc&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=10
 https://www.c-sharpcorner.com/article/how-to-deploy-react-application-on-github-pages/
+https://www.youtube.com/watch?v=9FpKrC8oyzg
+https://reactjs.org/docs/code-splitting.html
