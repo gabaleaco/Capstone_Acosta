@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class RenderRows extends Component {
+function RenderRows () {
 // render combatant details on a table
     render() {
         var context = this;

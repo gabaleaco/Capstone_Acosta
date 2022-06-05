@@ -1,16 +1,14 @@
-// import React from 'react';
-import React, { Component } from 'react';
-import RenderRows from './Rows';
+import React from 'react';
+//import React, { Component } from 'react';
+//import RenderRows from './Rows';
 
-// https://www.pluralsight.com/guides/creating-dynamic-editable-tables-with-reactjs
-
-//export default class DynamicTable extends React.Component {
-export default class DynamicTable extends Component {
+export default class DynamicTable extends React.Component {
+// export default class DynamicTable extends Component {
     constructor(props) {
         super(props);
 
         this.state = { // attributes to place in array
-            initiative: "", // "" form starts blank
+            initiative: "", // "" cell starts blank
             name: "",
             armorClass: "",
             hitPoints: "",
@@ -20,7 +18,7 @@ export default class DynamicTable extends Component {
 
     // event handlers to update displayed data from onChange when user changes cell data
     updateInitiative(event) {
-        this.setState({initiative: event.target.value});
+        this.setState({initiative: event.target.value});        
     }
     updateName(event) {
         this.setState({name: event.target.value});
@@ -35,6 +33,17 @@ export default class DynamicTable extends Component {
     // event handler for button click
     handleClick() {
         var combatants = this.state.combatants; // take current array of combatants and value of combatants
+        console.log("'add combatant' button clicked");
+        /* sort here instead of button function? */
+        /*const sortCombatants = type => {
+            const types = {
+                initiative: 'initiative',
+            };
+            const sortProperty = types[type];
+            const sorted = [...combatants].sort((a, b) => b[sortProperty] - a[sortProperty]);
+            setData(sorted);
+        };
+        sortCombatants(sortType);*/
 
         // https://stackoverflow.com/questions/71398371/reactjs-multi-input-form-to-dynamic-table/71399034#71399034
         // this creates one row displaying '[object Object]'. When one is modified, all others duplicate input.
@@ -43,15 +52,16 @@ export default class DynamicTable extends Component {
             name: this.state.name,
             armorClass: this.state.armorClass,
             hitPoints: this.state.hitPoints
-        });
+        });        
 
         this.setState({
             combatants: combatants,
-            initiative: "", // clears form after adding combatant
+            initiative: "", // "" clears form cell after adding combatant
             name: "",
             armorClass: "",
             hitPoints: ""
         });
+        console.log("combatant added");
     }
 
     // event handler to change combatant details on table
@@ -61,6 +71,7 @@ export default class DynamicTable extends Component {
         this.setState({
             combatants: combatants
         });
+        console.log("combatant changed");
     }
 
     // event handler to delete combatant from table
@@ -70,6 +81,12 @@ export default class DynamicTable extends Component {
         this.setState({
             combatants: combatants
         });
+        console.log("combatant deleted");
+    }
+
+    // event handler to sort combatants by initiative, descending
+    handleInitSort(i) {
+        //sort with handler? or add to handleClick to sort by value when pushing? or separate component function?
     }
 
     // render form inputs and table headers
@@ -84,7 +101,7 @@ export default class DynamicTable extends Component {
                             id="initiative"
                             type="text"
                             value={this.state.initiative}
-                            onChange={this.updateInitiative.bind(this)} // onChange binds to event handler
+                            onChange={this.updateInitiative.bind(this)} // onChange binds to corresponding event handler (i.e. updateInitiative)
                         />
                     </td>
                     <td>
@@ -119,77 +136,82 @@ export default class DynamicTable extends Component {
                             Add Combatant
                         </button>
                     </td>
-                </table>                
+                </table>
+                {console.log("new combatant form loaded")}             
                 Current Combatants
                 <table className="">
                     <thead>
                         <tr>
+                            {/* <button onClick={this.handleInitSort.bind(this)}>Sort</button> */}
+                            {/* maybe button not needed - sort on add instead? - or SortCombatant component?*/}
                             <th>Initiative</th>
                             <th>Name</th>  
                             <th>Armor Class</th> 
                             <th>Hit Points</th>                         
-                            <th>Kill?</th> 
+                            <th>Kill?</th>                             
                         </tr>
                     </thead>
                     <tbody>                        
-                        {this.renderRows()}
+                        {this.renderRows()} 
                     </tbody>
                 </table>
+                {/* <RenderRows />; */}
             </div>
         );
     }
 
     // render combatant details on a table
-    renderRows() {
-        return <RenderRows />;
-    }
     // renderRows() {
-    //     var context = this;
-    //     // combatants is the dynamic array
-    //     return  this.state.combatants.map(function(o, i) { // o accesses the values of each combatant object
-    //         return (
-    //             // i is index of element in array                
-    //             <tr key={"combatant-" + i}>
-    //                 <td>
-    //                     <input
-    //                         id="initiative"
-    //                         type="text"
-    //                         value={o.initiative}
-    //                         onChange={context.handleCombatantChanged.bind(context, i)} // onChange binds to event handler
-    //                     />
-    //                 </td>
-    //                 <td>
-    //                     <input
-    //                         id="name"
-    //                         type="text"
-    //                         value={o.name}
-    //                         onChange={context.handleCombatantChanged.bind(context, i)}
-    //                     />
-    //                 </td>
-    //                 <td>
-    //                     <input
-    //                         id="armorClass"
-    //                         type="text"
-    //                         value={o.armorClass}
-    //                         onChange={context.handleCombatantChanged.bind(context, i)}
-    //                     />
-    //                 </td>
-    //                 <td>    
-    //                     <input
-    //                         id="hitPoints"
-    //                         type="text"
-    //                         value={o.hitPoints}
-    //                         onChange={context.handleCombatantChanged.bind(context, i)}
-    //                     />
-    //                 </td>                    
-    //                 <td> 
-    //                     {/* // onClick binds event handler */}
-    //                     <button onClick={context.handleCombatantDeleted.bind(context, i)}> 
-    //                         Finish him! 
-    //                     </button>
-    //                 </td>
-    //             </tr>
-    //         );
-    //     });
+    //     return <RenderRows />;
     // }
+    renderRows() {
+        var context = this;
+        // combatants is the dynamic array
+        return  this.state.combatants.map(function(o, i) { // o accesses the values of each combatant object
+            return (
+                // i is index of element in array                
+                <tr key={"combatant-" + i}>
+                    <td>
+                        <input
+                            id="initiative"
+                            type="text"
+                            value={o.initiative}
+                            onChange={context.handleCombatantChanged.bind(context, i)} // onChange binds to event handler
+                        />
+                    </td>
+                    <td>
+                        <input
+                            id="name"
+                            type="text"
+                            value={o.name}
+                            onChange={context.handleCombatantChanged.bind(context, i)}
+                        />
+                    </td>
+                    <td>
+                        <input
+                            id="armorClass"
+                            type="text"
+                            value={o.armorClass}
+                            onChange={context.handleCombatantChanged.bind(context, i)}
+                        />
+                    </td>
+                    <td>    
+                        <input
+                            id="hitPoints"
+                            type="text"
+                            value={o.hitPoints}
+                            onChange={context.handleCombatantChanged.bind(context, i)}
+                        />
+                    </td>                                       
+                    <td> 
+                        {/* // onClick binds event handler */}
+                        <button onClick={context.handleCombatantDeleted.bind(context, i)}> 
+                            Finish him! 
+                        </button>
+                    </td>
+                    {console.log("combatant rendered")} 
+                </tr>
+            );
+        });
+    }
 }

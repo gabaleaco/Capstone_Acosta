@@ -15,6 +15,7 @@ required to begin, the benefit of the tool seems to diminish, in my eyes. I am h
 an encounter tracking tool which has no required fields and can be edited on the fly, all while
 staying on the same screen.
 
+
 ## App.js notes
 re-save package.json if app doesn't load - trying to find permanent fix
 not sure what's happened, but it's working now? keeping this here just in case
@@ -26,8 +27,6 @@ https://react-table.tanstack.com/docs/installation
 how-to https://www.youtube.com/watch?v=WRKEjPq75BY
 
 updating gh pages https://www.c-sharpcorner.com/article/how-to-deploy-react-application-on-github-pages/
-
-
 
 
 ### Sources:
@@ -43,3 +42,8 @@ https://www.freecodecamp.org/news/pass-data-between-components-in-react/
 https://www.digitalocean.com/community/tutorials/react-constructors-with-react-components
 https://reactjs.org/docs/react-component.html
 https://www.javatpoint.com/react-constructor
+https://www.knowledgehut.com/blog/web-development/understanding-constructors-with-react-components
+https://www.geeksforgeeks.org/react-js-constructor-method/
+https://dev.to/ramonak/react-how-to-dynamically-sort-an-array-of-objects-using-the-dropdown-with-react-hooks-195p
+https://ramonak.io/posts/react-how-to-sort-array-of-objects-with-dropdown-and-hooks
+https://beta.reactjs.org/learn/passing-props-to-a-component
