@@ -38,3 +38,8 @@ https://www.youtube.com/watch?v=4ORZ1GmjaMc&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rx
 https://www.c-sharpcorner.com/article/how-to-deploy-react-application-on-github-pages/
 https://www.youtube.com/watch?v=9FpKrC8oyzg
 https://reactjs.org/docs/code-splitting.html
+https://create-react-app.dev/docs/importing-a-component/
+https://www.freecodecamp.org/news/pass-data-between-components-in-react/
+https://www.digitalocean.com/community/tutorials/react-constructors-with-react-components
+https://reactjs.org/docs/react-component.html
+https://www.javatpoint.com/react-constructor
