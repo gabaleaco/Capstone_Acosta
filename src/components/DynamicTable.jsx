@@ -1,4 +1,5 @@
 import React from 'react';
+import './Styles.css';
 //import React, { Component } from 'react';
 //import RenderRows from './Rows';
 
@@ -91,9 +92,11 @@ export default class DynamicTable extends React.Component {
 
     // render form inputs and table headers
     render() {
+        const isEmpty = this.state.combatants.length > 0;
+        
         return (
             <div>New Combatant
-                <table>
+                <table class='center'>
                     {/* inputs for each combatant category */}
                     <td>
                         <th>Initiative</th>
@@ -137,25 +140,29 @@ export default class DynamicTable extends React.Component {
                         </button>
                     </td>
                 </table>
-                {console.log("new combatant form loaded")}             
-                Current Combatants
-                <table className="">
-                    <thead>
-                        <tr>
-                            {/* <button onClick={this.handleInitSort.bind(this)}>Sort</button> */}
-                            {/* maybe button not needed - sort on add instead? - or SortCombatant component?*/}
-                            <th>Initiative</th>
-                            <th>Name</th>  
-                            <th>Armor Class</th> 
-                            <th>Hit Points</th>                         
-                            <th>Kill?</th>                             
-                        </tr>
-                    </thead>
-                    <tbody>                        
-                        {this.renderRows()} 
-                    </tbody>
-                </table>
-                {/* <RenderRows />; */}
+                {console.log("new combatant form loaded")} 
+
+                {isEmpty && (
+                    <div>                        
+                        <p>Current Combatants</p> 
+                        <table class='center'>
+                            <thead>
+                                <tr>
+                                    {/* <button onClick={this.handleInitSort.bind(this)}>Sort</button> */}
+                                    {/* maybe button not needed - sort on add instead? - or SortCombatant component?*/}
+                                    <th>Initiative</th>
+                                    <th>Name</th>  
+                                    <th>Armor Class</th> 
+                                    <th>Hit Points</th>                         
+                                    <th></th>                             
+                                </tr>
+                            </thead>
+                            <tbody>                        
+                                {this.renderRows()} 
+                            </tbody>
+                        </table>   
+                    </div>
+                )}
             </div>
         );
     }
