@@ -1,5 +1,5 @@
 import React from 'react';
-import './Styles.css';
+import '../Styles.css';
 //import React, { Component } from 'react';
 //import RenderRows from './Rows';
 
@@ -92,10 +92,18 @@ export default class DynamicTable extends React.Component {
 
     // render form inputs and table headers
     render() {
-        const isEmpty = this.state.combatants.length > 0;
+        const isEmpty = this.state.combatants.length > 0; //show/hide text depending how many combatants on list
         
         return (
-            <div>New Combatant
+            <div>
+
+                {!isEmpty && (
+                    <>Welcome to the Encounterer! Fill in the cells below as needed and then click the button below to add.</>
+                )}
+                {isEmpty && (
+                    <>Keep adding characters as needed.</>
+                )}
+
                 <table class='center'>
                     {/* inputs for each combatant category */}
                     <td>
@@ -134,12 +142,28 @@ export default class DynamicTable extends React.Component {
                             onChange={this.updateHitPoints.bind(this)}
                         />
                     </td>
-                    <td><th></th>
+                    {/* <td><th></th>
                         <button onClick={this.handleClick.bind(this)}>
                             Add Combatant
                         </button>
-                    </td>
+                    </td> */}
                 </table>
+                {!isEmpty && (
+                    <>
+                        <button className="button" onClick={this.handleClick.bind(this)}>
+                            Click here to add a combatant
+                        </button>
+                    </>
+                )}
+                {isEmpty && (
+                    <>
+                        <button onClick={this.handleClick.bind(this)}>
+                            Add combatant
+                        </button>
+                    </>
+                )}
+                
+                
                 {console.log("new combatant form loaded")} 
 
                 {isEmpty && (
@@ -213,7 +237,7 @@ export default class DynamicTable extends React.Component {
                     <td> 
                         {/* // onClick binds event handler */}
                         <button onClick={context.handleCombatantDeleted.bind(context, i)}> 
-                            Finish him! 
+                            Finish them! 
                         </button>
                     </td>
                     {console.log("combatant rendered")} 

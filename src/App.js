@@ -1,12 +1,14 @@
 import './App.css';
-import Banner from './components/Banner';
+import Banner from './pages/Banner';
+// import { Header } from './pages/Header/Header';
 import DynamicTable from './components/DynamicTable';
 import OldDynamicTable from './components/OldDynamicTable';
 
 function App() {  
   return (
     <div className="App">
-      <Banner title='The Encounterer' subtitle='Roll for Initiative' />      
+      <Banner title='The Encounterer' subtitle='Roll for Initiative' />  
+      {/* <Header/> */}
 
       <DynamicTable />
 

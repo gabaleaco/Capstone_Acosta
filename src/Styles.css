@@ -24,3 +24,8 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.buttonBefore {
+  color: red;
+  font-size: medium;
+}

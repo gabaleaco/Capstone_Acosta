@@ -29,7 +29,23 @@ how-to https://www.youtube.com/watch?v=WRKEjPq75BY
 updating gh pages https://www.c-sharpcorner.com/article/how-to-deploy-react-application-on-github-pages/
 
 
+## Future work
+-sort combatants (by init, descending)
+    -start/next button (sort on start?)
+    -'on deck' notification
+-responsive web design (make mobile-friendly)
+-validate initiative, armorClass, and hitPoints for ints or blank only
+    -arrow adjustment on int only cells
+-line through at 0 hitPoints and overlay death save blocks
+-expand armorClass for advanced options (armor + dex + mods)
+-expand hitPoints for advanced options (current, max, temporary)
+-active effects (prone, charmed, etc.)
+-auto initiative
+-custom notes cell (or expandible window)
+
+
 ### Sources:
+All WWCC CS247 assignments and class content
 https://github.com/gitname/react-gh-pages
 https://www.pluralsight.com/guides/creating-dynamic-editable-tables-with-reactjs
 https://www.youtube.com/watch?v=j5P9FHiBVNo&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=20
