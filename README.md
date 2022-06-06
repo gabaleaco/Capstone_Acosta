@@ -30,7 +30,7 @@ updating gh pages https://www.c-sharpcorner.com/article/how-to-deploy-react-appl
 
 
 ## Future work
-[ ]sort combatants (by init, descending)
+-sort combatants (by init, descending)
     -start/next button (sort on start?)
     -'on deck' notification
 -responsive web design (make mobile-friendly)
