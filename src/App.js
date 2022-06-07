@@ -11,7 +11,6 @@ function App() {
       {/* <Header/> */}
 
       <DynamicTable />
-
       {/* <OldDynamicTable /> */}
 
       <Banner subtitle='Created by Alex Acosta'/>
