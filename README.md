@@ -1,6 +1,6 @@
-### Alex Acosta
-### Capstone Project "The Encounterer - a TTRPG encounter tracker"
-### Walla Walla Community College, Computer Science
+#### Alex Acosta
+#### Capstone Project "The Encounterer - a TTRPG encounter tracker"
+#### Walla Walla Community College, Computer Science
 
 # The Encounterer
 I wanted to build this in response to the frustrations I have experienced as a Table Top Role-
@@ -42,6 +42,9 @@ updating gh pages https://www.c-sharpcorner.com/article/how-to-deploy-react-appl
 -active effects (prone, charmed, etc.)
 -auto initiative
 -custom notes cell (or expandible window)
+-buttons
+    -hover over delete/kill for skulls/xbones
+    -pulse add button for x seconds after first cell is filled?
 
 
 ### Sources:
@@ -63,3 +66,4 @@ https://www.geeksforgeeks.org/react-js-constructor-method/
 https://dev.to/ramonak/react-how-to-dynamically-sort-an-array-of-objects-using-the-dropdown-with-react-hooks-195p
 https://ramonak.io/posts/react-how-to-sort-array-of-objects-with-dropdown-and-hooks
 https://beta.reactjs.org/learn/passing-props-to-a-component
+https://github.com/facebook/react/issues/5652

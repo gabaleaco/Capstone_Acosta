@@ -2,7 +2,7 @@ import './App.css';
 import Banner from './pages/Banner';
 // import { Header } from './pages/Header/Header';
 import DynamicTable from './components/DynamicTable';
-import OldDynamicTable from './components/OldDynamicTable';
+// import OldDynamicTable from './components/OldDynamicTable';
 
 function App() {  
   return (
