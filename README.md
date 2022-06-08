@@ -64,7 +64,6 @@ https://reactjs.org/docs/react-component.html
 https://www.javatpoint.com/react-constructor
 https://www.knowledgehut.com/blog/web-development/understanding-constructors-with-react-components
 https://www.geeksforgeeks.org/react-js-constructor-method/
-https://dev.to/ramonak/react-how-to-dynamically-sort-an-array-of-objects-using-the-dropdown-with-react-hooks-195p
-https://ramonak.io/posts/react-how-to-sort-array-of-objects-with-dropdown-and-hooks
-https://beta.reactjs.org/learn/passing-props-to-a-component
 https://github.com/facebook/react/issues/5652
+https://gist.github.com/mandiwise/44d1edce18f2ffb14f63
+https://bobbyhadz.com/blog/react-sort-array-of-objects

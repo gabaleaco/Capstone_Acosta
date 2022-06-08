@@ -1,7 +1,8 @@
 import React from 'react';
 import '../Styles.css';
 
-{console.log("DynamicTable.jsx success")}
+// https://www.pluralsight.com/guides/creating-dynamic-editable-tables-with-reactjs
+
 export default class DynamicTable extends React.Component {
     constructor(props) {
         super(props);
@@ -32,18 +33,6 @@ export default class DynamicTable extends React.Component {
     // event handler for button click
     handleClick() {
         var combatants = this.state.combatants; // take current array of combatants and value of combatants
-        console.log("add combatant button clicked");
-
-        /* sort here instead of separate component */
-        /*const sortCombatants = type => {
-            const types = {
-                initiative: 'initiative',
-            };
-            const sortProperty = types[type];
-            const sorted = [...combatants].sort((a, b) => b[sortProperty] - a[sortProperty]);
-            setData(sorted);
-        };
-        sortCombatants(sortType);*/
 
         // https://stackoverflow.com/questions/71398371/reactjs-multi-input-form-to-dynamic-table/71399034#71399034
         // this creates one row displaying '[object Object]'. When one is modified, all others duplicate input.
@@ -52,8 +41,10 @@ export default class DynamicTable extends React.Component {
             name: this.state.name,
             armorClass: this.state.armorClass,
             hitPoints: this.state.hitPoints
-        });        
-        console.log("sending combatant to list");
+        });
+        // var sortedList = this.combatants.sort((a, b) => b - a);
+        console.log("new combatant sent to array");
+        console.log(combatants);
 
         this.setState({
             combatants: combatants,
@@ -62,7 +53,7 @@ export default class DynamicTable extends React.Component {
             armorClass: '',
             hitPoints: ''
         });
-        {console.log("combatant form reset")}
+        {console.log("new combatant form reset")}
     }
 
     // event handler to change combatant details on table
@@ -73,6 +64,7 @@ export default class DynamicTable extends React.Component {
             combatants: combatants
         });
         console.log("combatant changed");
+        console.log(combatants);
     }
 
     // event handler to delete combatant from table
@@ -83,9 +75,27 @@ export default class DynamicTable extends React.Component {
             combatants: combatants
         });
         console.log("combatant deleted");
+        console.log(combatants);
     }    
 
-    // render form inputs and table headers
+    // helpful greeting
+    renderGreeting() {
+        const isEmpty = this.state.combatants.length > 0;
+        
+        return (
+            <div>
+                {/* helpful message if list is empty */}
+                {!isEmpty && (
+                    <>Welcome to the Encounterer! Fill in the cells below as needed and then click the button below to add.</>
+                )}
+                {isEmpty && (
+                    <>Continue adding characters as needed.</>
+                )}
+            </div>
+        )
+    }
+
+    // new combatant form and combatant list headers and renderRows call
     render() {
         const isEmpty = this.state.combatants.length > 0; //varying text depending if combatants is empty
         
@@ -96,7 +106,7 @@ export default class DynamicTable extends React.Component {
                     <>Welcome to the Encounterer! Fill in the cells below as needed and then click the button below to add.</>
                 )}
                 {isEmpty && (
-                    <>Keep adding characters as needed.</>
+                    <>Continue adding characters as needed.</>
                 )}
                 
                 <table className='center'>
@@ -108,7 +118,7 @@ export default class DynamicTable extends React.Component {
                                 <th>Initiative</th>
                                 <input                    
                                     id='initiative'
-                                    type='text'
+                                    type='number'
                                     value={this.state.initiative}
                                     onChange={this.updateInitiative.bind(this)} // onChange binds to corresponding event handler (i.e. updateInitiative)
                                 />
@@ -126,7 +136,7 @@ export default class DynamicTable extends React.Component {
                                 <th>Armor Class</th>
                                 <input
                                     id='armorClass'
-                                    type='text'
+                                    type='number'
                                     value={this.state.armorClass}
                                     onChange={this.updateArmorClass.bind(this)}
                                 />
@@ -135,7 +145,7 @@ export default class DynamicTable extends React.Component {
                                 <th>Hit Points</th>
                                 <input
                                     id='hitPoints'
-                                    type='text'
+                                    type='number'
                                     value={this.state.hitPoints}
                                     onChange={this.updateHitPoints.bind(this)}
                                 />
@@ -143,6 +153,7 @@ export default class DynamicTable extends React.Component {
                         </tr>
                     </tbody>
                 </table>
+
                 {/* varying button message */}
                 {!isEmpty && (
                     <>
@@ -157,7 +168,7 @@ export default class DynamicTable extends React.Component {
                             Add another combatant
                         </button>
                     </>
-                )}                 
+                )}
 
                 {/* keeps combatant list hidden if it's empty */}
                 {isEmpty && (
@@ -176,27 +187,29 @@ export default class DynamicTable extends React.Component {
                                 </tr>
                             </thead>
                             <tbody>                        
-                                {this.renderRows()}
-                                {console.log("combatant list updated")}
+                                {this.renderRows()}                                
                             </tbody>
                         </table>   
                     </div>
-                )} 
+                )}
             </div>
         );
-    }
+    } 
 
+    // array populates here
     renderRows() {
         var context = this;
+        
         // combatants is the dynamic array
-        return  this.state.combatants.map(function(o, i) { // o accesses the values of each combatant object
+        return [...this.state.combatants].sort((a, b) => b.initiative - a.initiative).map(function(o, i) { // o accesses the values of each combatant object
+        //return  this.state.combatants.map(function(o, i) { 
             return (
                 // i is index of element in array                
                 <tr key={'combatant-' + i}>
                     <td>
                         <input
                             id='initiative'
-                            type='text'
+                            type='number'
                             value={o.initiative}
                             onChange={context.handleCombatantChanged.bind(context, i)} // onChange binds to event handler
                         />
@@ -212,7 +225,7 @@ export default class DynamicTable extends React.Component {
                     <td>
                         <input
                             id='armorClass'
-                            type='text'
+                            type='number'
                             value={o.armorClass}
                             onChange={context.handleCombatantChanged.bind(context, i)}
                         />
@@ -220,7 +233,7 @@ export default class DynamicTable extends React.Component {
                     <td>    
                         <input
                             id='hitPoints'
-                            type='text'
+                            type='number'
                             value={o.hitPoints}
                             onChange={context.handleCombatantChanged.bind(context, i)}
                         />
