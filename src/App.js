@@ -3,7 +3,7 @@ import Banner from './pages/Banner';
 // import { Header } from './pages/Header/Header';
 import DynamicTable from './components/DynamicTable';
 // import OldDynamicTable from './components/OldDynamicTable';
-// import TestDynamicTable from './components/TestDynamicTable';
+import TestDynamicTable from './components/TestDynamicTable';
 
 function App() {  
   return (
@@ -13,7 +13,7 @@ function App() {
 
       <DynamicTable />
       {/* <OldDynamicTable /> */}
-      {/* <TestDynamicTable /> */}
+      <TestDynamicTable />
 
       <Banner subtitle='Created by Alex Acosta'/>
     </div>

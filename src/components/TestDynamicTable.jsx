@@ -4,7 +4,7 @@ import '../Styles.css';
 export default class TestDynamicTable extends React.Component {
     constructor(props) {
         super(props);
-
+        //this.handleCombatantChanged = this.handleCombatantChanged.bind(this); //attempt 3, white screen
         this.state = {
             rank: '',
             name: '',
@@ -33,8 +33,8 @@ export default class TestDynamicTable extends React.Component {
             name: '',
         });
     }
-
-    handleParticipantChanged(i, event) {
+    
+    handleParticipantChanged(i, event) {        
         var participants = this.state.participants;
         participants[i] = event.target.value;
         this.setState({
@@ -102,10 +102,14 @@ export default class TestDynamicTable extends React.Component {
 
     renderRows() {
         var context = this;
-        // const sortedParticipants = [...this.state.participants].sort((a, b) => b.rank - a.rank);
-        // console.log(sortedParticipants);
+        // const sortedParticipants = [...this.state.participants].sort((a, b) => b.rank - a.rank); //attempt 2
+        // console.log(sortedParticipants); //attempt 2
 
-        return  [...this.state.participants].sort((a, b) => b.rank - a.rank).map(function(o, i) {
+        console.log(this.state.participants); //no `Uncaught TypeError: this is undefined`` here
+        return [...this.state.participants].sort((a, b) => b.rank - a.rank).map(function(o, i) { //attempt 1
+        // console.log(this.state.participants); //`Uncaught TypeError: this is undefined` here
+
+        // return  sortedParticipants.map(function(o, i) { //attempt 2
             return (               
                 <tr key={'participants-' + i}>
                     <td>
@@ -114,6 +118,7 @@ export default class TestDynamicTable extends React.Component {
                             type='text'
                             value={o.rank}
                             onChange={context.handleParticipantChanged.bind(context, i)}
+                            // onChange={context.updateRank.bind(context)} //attempt 4, can't change once entered, but can delete
                         />
                     </td>
                     <td>
@@ -122,6 +127,7 @@ export default class TestDynamicTable extends React.Component {
                             type='text'
                             value={o.name}
                             onChange={context.handleParticipantChanged.bind(context, i)}
+                            // onChange={context.updateName.bind(context)} //attempt 4
                         />
                     </td>                                     
                     <td> 

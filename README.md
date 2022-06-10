@@ -67,3 +67,8 @@ https://www.geeksforgeeks.org/react-js-constructor-method/
 https://github.com/facebook/react/issues/5652
 https://gist.github.com/mandiwise/44d1edce18f2ffb14f63
 https://bobbyhadz.com/blog/react-sort-array-of-objects
+https://gist.github.com/mandiwise/44d1edce18f2ffb14f63 + `npm run deploy`
+https://stackoverflow.com/questions/60177206/react-on-click-event-order-array-of-data-passing-in-the-component/60177654#60177654
+https://blog.devgenius.io/react-tips-sorting-arrays-handling-clicks-and-inputs-d12e3a66460d
+https://javascript.plainenglish.io/sorting-react-components-using-sort-c443878731ac
+https://en.reactjs.org/docs/lifting-state-up.html

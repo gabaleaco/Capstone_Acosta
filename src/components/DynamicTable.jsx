@@ -202,7 +202,7 @@ export default class DynamicTable extends React.Component {
         
         // combatants is the dynamic array
         return [...this.state.combatants].sort((a, b) => b.initiative - a.initiative).map(function(o, i) { // o accesses the values of each combatant object
-        //return  this.state.combatants.map(function(o, i) { 
+        //return this.state.combatants.map(function(o, i) { 
             return (
                 // i is index of element in array                
                 <tr key={'combatant-' + i}>
