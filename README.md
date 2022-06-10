@@ -49,26 +49,35 @@ updating gh pages https://www.c-sharpcorner.com/article/how-to-deploy-react-appl
 
 
 ### Sources:
-All WWCC CS247 assignments and class content
+GITHUB:
 https://github.com/gitname/react-gh-pages
+https://www.c-sharpcorner.com/article/how-to-deploy-react-application-on-github-pages/
+https://gist.github.com/mandiwise/44d1edce18f2ffb14f63 + `npm run deploy`
+
+DYNAMIC TABLE:
 https://www.pluralsight.com/guides/creating-dynamic-editable-tables-with-reactjs
 https://www.youtube.com/watch?v=j5P9FHiBVNo&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=20
 https://www.youtube.com/watch?v=4ORZ1GmjaMc&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3&index=10
-https://www.c-sharpcorner.com/article/how-to-deploy-react-application-on-github-pages/
+
+COMPONENTS:
 https://www.youtube.com/watch?v=9FpKrC8oyzg
 https://reactjs.org/docs/code-splitting.html
 https://create-react-app.dev/docs/importing-a-component/
-https://www.freecodecamp.org/news/pass-data-between-components-in-react/
 https://www.digitalocean.com/community/tutorials/react-constructors-with-react-components
 https://reactjs.org/docs/react-component.html
 https://www.javatpoint.com/react-constructor
 https://www.knowledgehut.com/blog/web-development/understanding-constructors-with-react-components
 https://www.geeksforgeeks.org/react-js-constructor-method/
+
+PASSING DATA:
+https://www.freecodecamp.org/news/pass-data-between-components-in-react/
 https://github.com/facebook/react/issues/5652
 https://gist.github.com/mandiwise/44d1edce18f2ffb14f63
 https://bobbyhadz.com/blog/react-sort-array-of-objects
-https://gist.github.com/mandiwise/44d1edce18f2ffb14f63 + `npm run deploy`
 https://stackoverflow.com/questions/60177206/react-on-click-event-order-array-of-data-passing-in-the-component/60177654#60177654
 https://blog.devgenius.io/react-tips-sorting-arrays-handling-clicks-and-inputs-d12e3a66460d
 https://javascript.plainenglish.io/sorting-react-components-using-sort-c443878731ac
 https://en.reactjs.org/docs/lifting-state-up.html
+
+renderRows 'Uncaught TypeError' ERROR when using console.log:
+https://reactjs.org/docs/error-boundaries.html#how-about-event-handlers

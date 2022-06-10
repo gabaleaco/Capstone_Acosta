@@ -105,9 +105,9 @@ export default class TestDynamicTable extends React.Component {
         // const sortedParticipants = [...this.state.participants].sort((a, b) => b.rank - a.rank); //attempt 2
         // console.log(sortedParticipants); //attempt 2
 
-        console.log(this.state.participants); //no `Uncaught TypeError: this is undefined`` here
+        console.log(this.state.participants); //no `Uncaught TypeError: this is undefined` here (see README)
         return [...this.state.participants].sort((a, b) => b.rank - a.rank).map(function(o, i) { //attempt 1
-        // console.log(this.state.participants); //`Uncaught TypeError: this is undefined` here
+        // console.log(this.state.participants); //`Uncaught TypeError: this is undefined` here (see README)
 
         // return  sortedParticipants.map(function(o, i) { //attempt 2
             return (               
@@ -118,7 +118,7 @@ export default class TestDynamicTable extends React.Component {
                             type='text'
                             value={o.rank}
                             onChange={context.handleParticipantChanged.bind(context, i)}
-                            // onChange={context.updateRank.bind(context)} //attempt 4, can't change once entered, but can delete
+                            // onChange={context.updateRank.bind(context, i)} //attempt 4, can't change once entered, but can delete
                         />
                     </td>
                     <td>
@@ -127,7 +127,7 @@ export default class TestDynamicTable extends React.Component {
                             type='text'
                             value={o.name}
                             onChange={context.handleParticipantChanged.bind(context, i)}
-                            // onChange={context.updateName.bind(context)} //attempt 4
+                            // onChange={context.updateName.bind(context, i)} //attempt 4
                         />
                     </td>                                     
                     <td> 
